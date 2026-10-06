@@ -1,0 +1,32 @@
+
+/* 전체 화면의 기본 글꼴, 색상, 배경 */
+:root{font-family:Inter,'Pretendard',system-ui,-apple-system,sans-serif;color:#1f3036;background:#f5f7f8;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;line-height:1.6}
+
+/* 공통 요소와 키보드 포커스 스타일 */
+*{box-sizing:border-box}body{margin:0}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait;opacity:.65}button,.secondary{background:white;border:1px solid #cad5d9;border-radius:10px;padding:12px 20px;color:#243d45}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #56b7aa;outline-offset:3px}
+/* 페이지 너비, 제목, 안내 문구 */
+.page{max-width:1080px;margin:auto;padding:42px 28px 80px}.narrow{max-width:660px}.back{display:inline-block;color:#657780;margin-bottom:32px;font-size:14px}.eyebrow{color:#137d70;font-size:12px;letter-spacing:1.6px;font-weight:750;margin:0 0 12px}h1{font-size:clamp(30px,4vw,46px);line-height:1.3;letter-spacing:-1.7px;margin:0 0 18px}h2{font-size:21px;line-height:1.4;margin:12px 0}p{margin:0 0 14px}.intro{color:#63757e;margin-bottom:32px}
+/* 공통 카드와 버튼 */
+.panel{background:#fff;border:1px solid #e0e7ea;border-radius:18px;padding:28px;margin-bottom:22px;box-shadow:0 8px 30px #183d4605}.primary{display:inline-flex;align-items:center;justify-content:center;border:1px solid #126e63;background:#126e63;color:white;font-weight:650;padding:14px 24px;border-radius:10px}.primary:hover{background:#0b594f}.full{width:100%}
+/* 입력 폼, 원 단위 표시, 검증 오류 */
+.form fieldset{border:0;padding:0;margin:0}label{display:block;font-weight:650;margin-bottom:8px}.required{font-size:11px;color:#758991;font-weight:400;margin-left:6px}.field{margin-top:24px}input,select{width:100%;min-height:50px;border:1px solid #cbd7dc;border-radius:9px;background:white;color:#20363e;padding:12px 14px}input[aria-invalid=true],select[aria-invalid=true]{border-color:#c44646}.money-input{position:relative}.money-input input{padding-right:44px}.money-input span{position:absolute;right:16px;top:12px;color:#6b7c84}.hint{font-size:13px;color:#72838c;margin:6px 0 8px}.field-error{font-size:13px;color:#b62d39;margin:6px 0}.form .primary{margin-top:28px}.center{text-align:center}
+/* 오류 안내와 결과 화면 배치 */
+.notice{padding:26px;border-radius:14px;margin-bottom:24px}.danger,.risk{background:#fff4f3;border:1px solid #f3d0cc}.notice button{margin-top:16px}.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:24px}.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+/* 상태 배지, RIR 점수, 판단 근거 */
+.badge{display:inline-block;border-radius:999px;background:#edf2f4;padding:5px 12px;font-size:12px;font-weight:700;color:#536973}.red{background:#ffe0dc;color:#aa302c}.green{background:#dff4e9;color:#237251}.big-score{font-size:64px;font-weight:750;letter-spacing:-3px;color:#126e63;margin:12px 0}.factors{padding-left:22px;color:#516670}.factors li{padding:6px}
+/* 가로 스크롤을 지원하는 시나리오 비교 테이블 */
+.table-panel{padding:8px 20px}.table-scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}caption{text-align:left;padding:20px 0;font-weight:650}th,td{padding:20px 16px;border-bottom:1px solid #e5ecef}thead th{color:#6a7e88;font-size:13px;background:#f7f9fa}tbody th{font-weight:600}.metric{font-weight:750;color:#126e63}
+/* 홈 화면과 이용 단계 카드 */
+.home{padding-top:100px}.home .intro{font-size:18px}.home-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}.home-grid p:last-child{color:#6a7d86;font-size:14px}
+/* 상단 바와 테마 전환 */
+.topbar{max-width:1080px;margin:auto;padding:18px 28px 0;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:750;letter-spacing:1.6px;font-size:13px;color:#137d70}.topbar nav{display:flex;gap:16px;align-items:center}.topbar nav button{padding:6px 12px;font-size:13px}
+/* 로딩 스피너, 진행 바, 입력 요약, 실행 이력 */
+.spinner{width:28px;height:28px;border:3px solid #cfe3df;border-top-color:#126e63;border-radius:50%;animation:spin 1s linear infinite;margin:12px 0}@keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.spinner{animation:none}}progress{width:100%;accent-color:#126e63}.summary{display:grid;grid-template-columns:120px 1fr;gap:8px 16px;margin:0}.summary dt{color:#72838c}.summary dd{margin:0;font-weight:650}.history{list-style:none;padding:0;margin:0}.history li{display:flex;gap:16px;align-items:center;padding:10px 0;border-bottom:1px solid #e5ecef}.history li a{flex:1}.history a[aria-current=page]{font-weight:750;color:#126e63}
+/* RIR 반원 게이지 */
+.gauge{width:100%;max-width:320px;display:block;margin:8px auto}.gauge-track,.gauge-fill{fill:none;stroke-width:14}.gauge-track{stroke:#e5ecef}.gauge-fill{stroke:#126e63}.gauge-fill.red{stroke:#c44646}.gauge-tick{stroke:#243d45;stroke-width:2}.gauge-value{font-size:26px;font-weight:750;fill:currentColor}
+/* Champion 모델 강조 */
+.champion{background:#fff1c9;color:#8a5a00}.champion-row{background:#fffaf0}
+/* 다크 테마: 하드코딩된 카드·입력·표 색상만 덮어씁니다. */
+:root[data-theme=dark]{color:#e6eef0;background:#0f1a1d}[data-theme=dark] .panel,[data-theme=dark] input,[data-theme=dark] select,[data-theme=dark] button:not(.primary),[data-theme=dark] .secondary{background:#16262b;border-color:#2b4148;color:#e6eef0}[data-theme=dark] .danger,[data-theme=dark] .risk{background:#2b1a1a;border-color:#5a2f2f}[data-theme=dark] thead th,[data-theme=dark] .champion-row{background:#1b2d33}[data-theme=dark] th,[data-theme=dark] td,[data-theme=dark] .history li{border-color:#2b4148}[data-theme=dark] .gauge-track{stroke:#2b4148}[data-theme=dark] .gauge-tick{stroke:#e6eef0}[data-theme=dark] .badge{background:#243940;color:#c5d6db}[data-theme=dark] .red{background:#4a2321;color:#ffb3ad}[data-theme=dark] .green{background:#1d3d2f;color:#9be0bc}[data-theme=dark] .champion{background:#4a3a10;color:#ffd978}[data-theme=dark] .intro,[data-theme=dark] .hint,[data-theme=dark] .back{color:#9bb0b7}
+/* 작은 화면에서는 카드를 세로로 배치하고 여백을 줄입니다. */
+@media(max-width:650px){.page{padding:28px 18px 60px}.home{padding-top:70px}.panel{padding:22px}.result-grid,.home-grid{grid-template-columns:1fr;gap:0}.home-grid{margin-top:40px}.actions>a,.actions>button{flex:1;text-align:center}.big-score{font-size:54px}.table-panel{padding:8px}th,td{padding:16px 12px}}
