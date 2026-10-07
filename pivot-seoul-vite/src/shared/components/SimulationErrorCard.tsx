@@ -1,6 +1,6 @@
 // SCR-004 오류 유형(ErrorKind)별 제목과 안내 문구를 보여주는 오류 카드입니다. 재시도·이동 버튼은 부모가 actions로 전달합니다.
 import type { ReactNode } from 'react';
-import type { ErrorKind } from '../types/pivot';
+import type { ErrorKind } from '../types/error';
 import StatusCard from './StatusCard';
 
 const copy: Record<ErrorKind, { title: string; hint: string }> = {

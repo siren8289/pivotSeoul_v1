@@ -1,6 +1,6 @@
 // SCR-005 AI(Champion Model)가 예측한 위험 확률을 ai_status에 맞춰 표시합니다. (AI-002, AI-003)
-import type { AiStatus } from '../types/pivot';
-import { probability } from '../utils/format';
+import type { AiStatus } from '../types';
+import { probability } from '../../../shared/utils/format';
 
 type Props = { riskProbability?: number; aiStatus?: AiStatus };
 

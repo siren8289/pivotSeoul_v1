@@ -1,14 +1,14 @@
-// SCR-002 생애단계를 선택하고 PivotContext의 life_stage에 저장합니다. 서버 호출은 없습니다.
+// SCR-002 생애단계를 선택하고 InputContext의 life_stage에 저장합니다. 서버 호출은 없습니다.
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../../../shared/components/PageHeader';
 import LifeStageField from '../components/LifeStageField';
-import { usePivot } from '../context/usePivot';
+import { useInput } from '../hooks/useInput';
 
 export default function StageSelectionPage() {
   const navigate = useNavigate();
-  const { form, setField } = usePivot();
+  const { form, setField } = useInput();
   const [error, setError] = useState('');
 
   // 선택하지 않으면 다음 단계(온보딩)로 넘어가지 않습니다.

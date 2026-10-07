@@ -1,6 +1,6 @@
 // SCR-001 서비스 이용 흐름을 안내하고 생애단계 선택 화면으로 연결합니다.
 import { Link } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../../shared/components/PageHeader';
 
 // 홈 화면에 표시할 이용 단계입니다. 각 항목은 단계 번호, 제목, 설명입니다.
 const steps = [

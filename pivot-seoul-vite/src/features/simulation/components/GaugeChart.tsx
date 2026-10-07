@@ -1,6 +1,6 @@
 // SCR-005 RIR을 반원 게이지로 표시합니다. rir·is_red_zone·thresholds는 모두 서버 값이며 Red Zone 판정은 재계산하지 않습니다.
-import type { Thresholds } from '../types/pivot';
-import { percent } from '../utils/format';
+import type { Thresholds } from '../types';
+import { percent } from '../../../shared/utils/format';
 import RiskBadge from './RiskBadge';
 
 type Props = { rir?: number; thresholds?: Thresholds; isRedZone?: boolean };

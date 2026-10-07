@@ -1,6 +1,6 @@
 // SCR-006 ML·DL 모델을 평가지표별로 비교하는 테이블입니다. (API-009)
-import type { ModelEntry } from '../types/pivot';
-import { metric } from '../utils/format';
+import type { ModelEntry } from '../types';
+import { metric } from '../../../shared/utils/format';
 import ChampionBadge from './ChampionBadge';
 
 export default function ModelCompareTable({ models }: { models: ModelEntry[] }) {

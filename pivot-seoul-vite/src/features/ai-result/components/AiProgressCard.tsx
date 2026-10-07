@@ -1,5 +1,5 @@
 // SCR-005 LLM 설명(AI-001)의 생성 진행 상태와 결과를 보여줍니다. AI가 늦거나 실패해도 Rule 결과 화면은 유지됩니다.
-import type { AiStatus } from '../types/pivot';
+import type { AiStatus } from '../types';
 
 type Props = { aiStatus?: AiStatus; explanation?: string };
 

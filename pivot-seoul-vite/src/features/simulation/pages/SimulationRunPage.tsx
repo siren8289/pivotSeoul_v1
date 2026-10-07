@@ -1,19 +1,19 @@
 // SCR-004 Session으로 Run을 생성하고 Rule 계산이 끝나면 결과 화면으로 이동합니다. (API-002, BR-002, BR-004)
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../../../shared/components/PageHeader';
+import LoadingState from '../../../shared/components/LoadingState';
+import SimulationErrorCard from '../../../shared/components/SimulationErrorCard';
+import { won } from '../../../shared/utils/format';
+import { lifeStageLabel, useInput } from '../../input';
 import RunButton from '../components/RunButton';
-import LoadingState from '../components/LoadingState';
-import SimulationErrorCard from '../components/SimulationErrorCard';
-import { usePivot } from '../context/usePivot';
-import { lifeStageLabel } from '../data/lifeStages';
-import { won } from '../utils/format';
+import { useSimulation } from '../hooks/useSimulation';
 
 export default function SimulationRunPage() {
   const navigate = useNavigate();
-  const { form, sessionUuid, pending, runError, startRun } = usePivot();
+  const { form, sessionUuid } = useInput();
+  const { starting: running, runError, startRun } = useSimulation();
   // 세션이 없으면 Run을 만들 수 없으므로 입력 흐름의 처음으로 되돌립니다.
   if (!sessionUuid) return <Navigate to="/stage" replace />;
-  const running = pending === 'run';
 
   // 성공 시에만 이동하며 실패하면 이 화면에서 오류 유형별로 안내합니다.
   async function run() {

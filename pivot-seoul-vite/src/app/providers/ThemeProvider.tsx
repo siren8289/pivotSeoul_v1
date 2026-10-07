@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
-import { ThemeContext } from './useTheme';
-import type { Theme } from './useTheme';
+import { ThemeContext } from '../../shared/hooks/useTheme';
+import type { Theme } from '../../shared/hooks/useTheme';
 
 const THEME_KEY = 'pivot.theme';
 

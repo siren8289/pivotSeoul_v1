@@ -1,13 +1,11 @@
 // 페이지 경로 정의입니다. 모든 페이지는 Layout 안에서 렌더링됩니다.
 import { Navigate } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
-import Layout from './components/Layout';
+import Layout from './Layout';
 import HomePage from './pages/HomePage';
-import StageSelectionPage from './pages/StageSelectionPage';
-import OnboardingPage from './pages/OnboardingPage';
-import SimulationRunPage from './pages/SimulationRunPage';
-import ResultsPage from './pages/ResultsPage';
-import ModelComparePage from './pages/ModelComparePage';
+import { OnboardingPage, StageSelectionPage } from '../features/input';
+import { ResultsPage, SimulationRunPage } from '../features/simulation';
+import { ModelComparePage } from '../features/model';
 
 export const routes: RouteObject[] = [
   {

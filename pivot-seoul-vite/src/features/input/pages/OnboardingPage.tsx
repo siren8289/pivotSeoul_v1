@@ -1,19 +1,18 @@
 // SCR-003 소득·보증금·월세를 입력받아 검증한 뒤 Session을 생성합니다. (API-001, BR-001)
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import type { FormEvent } from 'react';
-import PageHeader from '../components/PageHeader';
+import PageHeader from '../../../shared/components/PageHeader';
+import SimulationErrorCard from '../../../shared/components/SimulationErrorCard';
 import MoneyField from '../components/MoneyField';
-import SimulationErrorCard from '../components/SimulationErrorCard';
-import { usePivot } from '../context/usePivot';
 import { lifeStageLabel } from '../data/lifeStages';
+import { useInput } from '../hooks/useInput';
 
 // 반복되는 금액 입력 필드의 라벨과 안내 문구를 정의합니다.
 const fields = [{ key: 'income', label: '월소득', hint: '매달 받는 소득을 입력해주세요.', placeholder: '예: 3000000' }, { key: 'deposit', label: '보증금', hint: '계약 시 납부하는 보증금입니다.', placeholder: '예: 10000000' }, { key: 'monthlyRent', label: '월세', hint: '매달 납부하는 월세를 입력해주세요.', placeholder: '예: 700000' }] as const;
 export default function OnboardingPage() {
   const navigate = useNavigate();
-  // 입력값·필드 오류·요청 상태는 PivotContext가 관리하며 화면은 이벤트만 전달합니다.
-  const { form, fieldErrors: errors, sessionError, pending, setField, submitOnboarding } = usePivot();
-  const loading = pending === 'session';
+  // 입력값·필드 오류·요청 상태는 InputContext가 관리하며 화면은 이벤트만 전달합니다.
+  const { form, fieldErrors: errors, sessionError, submitting: loading, setField, submitOnboarding } = useInput();
   // 생애단계가 없으면 SCR-002부터 진행하도록 되돌립니다.
   if (!form.lifeStage) return <Navigate to="/stage" replace />;
 

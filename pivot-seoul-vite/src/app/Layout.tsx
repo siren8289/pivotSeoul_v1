@@ -1,6 +1,6 @@
 // 모든 페이지에 공통인 상단 바와 테마 전환 버튼을 제공하고 하위 라우트를 Outlet에 렌더링합니다.
 import { Link, Outlet } from 'react-router-dom';
-import { useTheme } from '../context/useTheme';
+import { useTheme } from '../shared/hooks/useTheme';
 
 export default function Layout() {
   const { theme, toggle } = useTheme();

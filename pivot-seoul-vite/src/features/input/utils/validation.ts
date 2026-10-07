@@ -1,5 +1,5 @@
 // SCR-003 입력 검증입니다. 서버(API-001)도 400으로 같은 필드를 검증하므로 최종 판단은 서버가 합니다.
-import type { FieldErrors, HousingForm, HousingInput } from '../types/pivot';
+import type { FieldErrors, HousingForm, HousingInput } from '../types';
 
 const moneyFields = ['income', 'deposit', 'monthlyRent'] as const;
 
